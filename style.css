@@ -4,3 +4,30 @@ html { box-sizing: border-box; }
 
 /* ---------------------------------------------------- */
 
+.kontejner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px;
+    gap: 1px;
+    
+}
+
+img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.kontejner>:nth-child(5n){
+    grid-column: 1/3;
+}
+
+@media (min-width:800px){
+    .kontejner{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .kontejner>:nth-child(5n){
+        grid-column: span 2/span 2;
+        grid-row: span 2/ span 2;
+    }
+}
